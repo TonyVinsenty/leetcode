@@ -25,4 +25,16 @@ print(removeDuplicates(my_list))
 prices_list = [7,1,5,3,6,4]
 
 def maxProfit(prices):
-    
+    if len(prices) == 1:
+        return 0
+    else:
+        i = 0
+        j = 1
+        sum = 0
+        while j < len(prices):
+            if prices[i] > prices[j]:
+                j+=1
+            else:
+                dif = prices[j] - prices[i]
+                sum += dif
+                j += 1
